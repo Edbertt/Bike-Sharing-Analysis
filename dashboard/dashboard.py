@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
+import os
 
 # Membuat function untuk membantu mengelompokan data
 def create_season_order_df(hour_df):
@@ -21,8 +22,11 @@ def create_hour_order_df(hour_df):
     })
     return hours_orders_df
 
+path = os.path.dirname(__file__)
+my_file = path+'/cleaned_hour.csv'
+
 # Membuka file csv yang sudah dicleaning
-hour_df = pd.read_csv('cleaned_hour.csv', encoding="unicode_escape")
+hour_df = pd.read_csv(my_file)
 st.set_page_config(page_title="Bike-Sharing Dashboard",layout="wide") # Menetapkan judul halaman
 
 # Komponen sidebar
