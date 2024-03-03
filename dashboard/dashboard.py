@@ -22,7 +22,7 @@ def create_hour_order_df(hour_df):
     return hours_orders_df
 
 # Membuka file csv yang sudah dicleaning
-hour_df = pd.read_csv("cleaned_hour.csv")
+hour_df = pd.read_csv("../dashboard/cleaned_hour.csv")
 st.set_page_config(page_title="Bike-Sharing Dashboard",layout="wide") # Menetapkan judul halaman
 
 # Komponen sidebar
